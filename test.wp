@@ -1,0 +1,11 @@
+begin
+x2 := 3;
+x3 := x2;
+
+succ(x3);
+while(x1==x2) do
+	while(x2==x1) do
+		while(x1==x1) do
+			succ(x1);
+			x5 := 10;
+end
