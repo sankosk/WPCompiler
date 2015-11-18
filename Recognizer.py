@@ -12,9 +12,10 @@ VARIABLE = "x[0-9]*"
 NUMBER = "[0-9]"
 COMPARATOR = "==|>=|<=|>|<|!="
 SUCESSOR = "succ[(][\s]*%s[\s]*[)];"%(VARIABLE)
+PREDECESSOR = "pred[(][\s]*%s[\s]*[)];"%(VARIABLE)
 ASSIGNATION = "[\s]*%s[\s]*:=[\s]*x[0-9*]+[\s]*;|[\s]*%s[\s]*:=[\s]*[0-9*]+[\s]*;"%(VARIABLE, VARIABLE)
-SENTENCE = "%s|%s" % (ASSIGNATION, SUCESSOR)
-FLOWCONTROLSTR = "[\s]*while[(]x[0-9]*[><=]+x[0-9]*[)][\s]do"
+SENTENCE = "%s|%s|%s" % (ASSIGNATION, SUCESSOR, PREDECESSOR)
+FLOWCONTROLSTR = "[\s]*while[(]x[0-9]*[><=]+x[0-9]*[)][\s]do|[\s]*while[(]x[0-9]*[><=]+[0-9]*[)][\s]do"
 
 class Recognizer(object):
 	
@@ -90,7 +91,8 @@ class Recognizer(object):
 		Get all predecessors sentences of the source code
 		@return: List of predecessors sentences
 		"""
-		return ""
+		pattern = re.compile(PREDECESSOR)
+		return pattern.findall(self.sourceContent)
 
 	def getFlowControlStructures(self):
 		"""

@@ -3,9 +3,11 @@ x2 := 3;
 x3 := x2;
 
 succ(x3);
-while(x1==x2) do
-	while(x2==x1) do
-		while(x1==x1) do
+while(x2==3) do
+	while(x2==3) do
+		while(x2==3) do
 			succ(x1);
-			x5 := 10;
+			succ(x1);
+			pred(x1);
+			x2 := 10;
 end

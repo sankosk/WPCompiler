@@ -1,18 +1,5 @@
 class Translator(object):
 
-	#def __init__(self):
-
-	"""
-	def generatePythonFile(self, fileName, sourceCode):
-		try:
-			f = open(fileName, "rb")
-			#content = f.write("")
-			f.close()
-			return content
-		except:
-			return "[ERROR]: An error has ocurred writting the file."
-	"""
-
 	def getTranslatedVariable(self, code):
 		"""
 		Method to tranlate <<variables>> program while sintax to python
@@ -46,7 +33,8 @@ class Translator(object):
 		Method to tranlate <<variables>> program while sintax to python
 		@param: a string that contains the program while code to replace
 		"""
-		
+		return "".join("".join("".join(code).split("pred(")).split(")")[0] + "-=1")
+
 
 	def getTranslatedFlowControlStruct(self, code):
 		"""
