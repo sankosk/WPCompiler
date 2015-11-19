@@ -24,6 +24,8 @@ class WPCompiler(object):
 		begtags = Recognizer(content).getBegTag()
 		endtags = Recognizer(content).getEndTag()
 		asignations = Recognizer(content).getAssignations()
+		macrosumsubs = Recognizer(content).getMathMacro()
+		asignations = asignations + macrosumsubs
 		succesors =  Recognizer(content).getSucessors()
 		predecessors = Recognizer(content).getPredecessors()
 		flowcontrols = Recognizer(content).getFlowControlStructures()
@@ -40,7 +42,7 @@ class WPCompiler(object):
 		for i in asignations:
 			self.nonTranslated.append(i)
 			self.translated.append(Translator().getTranslatedAssignation(i))
-
+			
 		for i in succesors:
 			self.nonTranslated.append(i)
 			self.translated.append(Translator().getTranslatedSucessor(i).split(";")[0])

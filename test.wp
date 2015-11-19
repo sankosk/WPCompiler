@@ -6,6 +6,9 @@ succ(x3);
 while(x2==3) do
 	while(x2==3) do
 		while(x2==3) do
+			x4 := 5;
+			x5 := 6;
+			x6 := x5 / x4;
 			succ(x1);
 			succ(x1);
 			pred(x1);

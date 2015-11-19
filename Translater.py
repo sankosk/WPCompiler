@@ -48,3 +48,7 @@ class Translator(object):
 
 	def getTranslatedEndTag(self, code):
 		return ""
+		
+	def getTranslatedMathMacro(self,code):
+		return code.split(";")[0].replace(":=", "=")
+		
