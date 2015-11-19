@@ -7,9 +7,10 @@ import os, re
 #To FIX:
 """
  - Soportar multiples condiciones en los while
- - Añadir los operadores aritmetico-lógicos -> {AND, OR, NOT, XOR}
- - Añadir soporte para comentarios
+ - Anadir los operadores aritmetico-logicos -> {AND, OR, NOT, XOR}
+ - Anadir soporte para comentarios
  - Asegurarse de que se respetan las reglas a la hora de anidar funciones
+ - Implementar soporte para sentencias de asignacion tales que :  X1 := 0 .. Xn;
 """
 
 #GRAMMAR CONSTANTS
@@ -25,7 +26,7 @@ MATHMACROS = "[\s]*%s[\s]*:=[\s]*%s[\s]*[+-/*][\s]*%s[\s]*;" % (VARIABLE, VARIAB
 SENTENCE = "%s|%s|%s" % (ASSIGNATION, SUCESSOR, PREDECESSOR)
 FLOWCONTROLSTR = "[\s]*while[(]x[0-9]*[!><=]+x[0-9]*[)][\s]do|[\s]*while[(]x[0-9]*[!><=]+[0-9]*[)][\s]do"
 COMMENTS = ""
-
+LOGICALOPERATORS = ""
 
 class Recognizer(object):
 	
