@@ -11,6 +11,7 @@ import os, re
  - Anadir soporte para comentarios
  - Asegurarse de que se respetan las reglas a la hora de anidar funciones
  - Implementar soporte para sentencias de asignacion tales que :  X1 := 0 .. Xn;
+ - Implementar soporte para sentencias de asignacio como : Xk+1 := x1; para facilitar el anidado de funciones
 """
 
 #GRAMMAR CONSTANTS
