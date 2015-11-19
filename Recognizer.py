@@ -4,6 +4,13 @@ import os, re
 @Author:		Esteban Montes Morales
 @Description: 	Used to recognize reservated words of a while program
 """
+#To FIX:
+"""
+ - Soportar multiples condiciones en los while
+ - Añadir los operadores aritmetico-lógicos -> {AND, OR, NOT, XOR}
+ - Añadir soporte para comentarios
+ - Asegurarse de que se respetan las reglas a la hora de anidar funciones
+"""
 
 #GRAMMAR CONSTANTS
 BEGTAG = "BEGIN|begin|Begin"
@@ -17,6 +24,8 @@ ASSIGNATION = "[\s]*%s[\s]*:=[\s]*x[0-9*]+[\s]*;|[\s]*%s[\s]*:=[\s]*[0-9*]+[\s]*
 MATHMACROS = "[\s]*%s[\s]*:=[\s]*%s[\s]*[+-/*][\s]*%s[\s]*;" % (VARIABLE, VARIABLE, VARIABLE)
 SENTENCE = "%s|%s|%s" % (ASSIGNATION, SUCESSOR, PREDECESSOR)
 FLOWCONTROLSTR = "[\s]*while[(]x[0-9]*[!><=]+x[0-9]*[)][\s]do|[\s]*while[(]x[0-9]*[!><=]+[0-9]*[)][\s]do"
+COMMENTS = ""
+
 
 class Recognizer(object):
 	
