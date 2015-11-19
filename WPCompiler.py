@@ -88,5 +88,13 @@ if "__main__":
 	print "################"
 	try:
 		os.system("python %s" % sys.argv[2])
+	
+	except(KeyboardInterrupt):
+		print 
+		print "########################################"
+		print "Feels infinite ma bro"
+		
 	except:
+		print 
+		print "########################################"
 		print "Your .wp program feels wrong wrote, check the syntax again :D\n"

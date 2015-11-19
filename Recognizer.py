@@ -16,7 +16,7 @@ PREDECESSOR = "pred[(][\s]*%s[\s]*[)];"%(VARIABLE)
 ASSIGNATION = "[\s]*%s[\s]*:=[\s]*x[0-9*]+[\s]*;|[\s]*%s[\s]*:=[\s]*[0-9*]+[\s]*;"%(VARIABLE, VARIABLE)
 MATHMACROS = "[\s]*%s[\s]*:=[\s]*%s[\s]*[+-/*][\s]*%s[\s]*;" % (VARIABLE, VARIABLE, VARIABLE)
 SENTENCE = "%s|%s|%s" % (ASSIGNATION, SUCESSOR, PREDECESSOR)
-FLOWCONTROLSTR = "[\s]*while[(]x[0-9]*[><=]+x[0-9]*[)][\s]do|[\s]*while[(]x[0-9]*[><=]+[0-9]*[)][\s]do"
+FLOWCONTROLSTR = "[\s]*while[(]x[0-9]*[!><=]+x[0-9]*[)][\s]do|[\s]*while[(]x[0-9]*[!><=]+[0-9]*[)][\s]do"
 
 class Recognizer(object):
 	
